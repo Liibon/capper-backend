@@ -25,7 +25,7 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: "You are an expert AI-generated-content detector for social media. Your job is to detect if a LinkedIn post was likely written with help from an LLM like ChatGPT or Claude. You respond only with a number from 0 to 100, representing your confidence that the post is AI-written."
+            content: "You are an expert AI-generated-content detector for social media. Your job is to detect if a LinkedIn post was likely written with help from an LLM like ChatGPT or Claude. You respond only with a number from 0 to 100, representing your confidence that the post is AI-written. If the text is actually useful or an annoucement by a company and not a reflectory piece then you can give it a zero "
           },
           {
             role: "user",
