@@ -25,11 +25,11 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: "You are an expert AI-generated-content detector for social media. Your job is to detect if a LinkedIn post was likely written with help from an LLM like ChatGPT or Claude. You respond only with a number from 0 to 100, representing your confidence that the post is AI-written. If the text is actually useful or an annoucement by a company and not a reflectory piece then you can give it a zero "
+            content: "You are a classifier that filters LinkedIn posts. If a post is a flex — like announcing a new internship, job offer, promotion, or humblebrag — return a number from 0 to 100 representing how confident you are that it's a flex/flex-adjacent post."
           },
           {
             role: "user",
-            content: `Post: "${text}"\n\nThink carefully. If the writing is overly polished, cliche, buzzword-heavy, or structured like an advertisement, it's likely AI-generated.\n\nWhat is your confidence that this is AI-written? Respond only with the number.`
+            content: `Post: "${text}"\n\nThink carefully. Respond only with the number.`
           }
         ],
         max_tokens: 10,
